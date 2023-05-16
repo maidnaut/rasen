@@ -1,0 +1,519 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 12pt;
+}
+fieldset {
+	font-size: 12px;
+	padding: 10px;
+	width: 250px;
+	text-align: center;
+	border: none !important;
+	margin: 0 auto;
+	padding: 32px;
+}
+
+hr {
+	border: 1px solid;
+	border-bottom: none;
+	height: 0px;
+	margin: 0 auto;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	margin-right: 48px;
+}
+
+input[type=submit], input[type=button] {
+	padding: 8px;
+	border-radius: 8px;
+}
+input[type=text], input[type=password] {
+	padding: 8px;
+	border-radius: 8px;
+	border: 1px solid;
+	margin-bottom: 8px;
+}
+.small {
+	font-size: 9pt;
+}
+
+.nav {
+	border-bottom: 1px solid;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 9001;
+	transition: top 0.3s;
+}
+.left a {
+	font-size: 16pt !important;
+}
+.right {
+	float: right;
+	position: relative;
+	top: -22px;
+	left: -24px;
+}
+.right a {
+	font-size: 9pt;
+}
+.right img {
+	width: 1rem;
+    height: 1rem;
+	outline-style: double;
+	padding: 2px;
+	margin-left: 8px;
+	margin-bottom: -8px;
+}
+.container {
+	padding: 8px;
+	width: 800px;
+	margin: 0 auto;
+}
+.fullwidth {
+	border-top: 1px solid #222;
+	background: #000;
+	text-align: center;
+	padding: 24px;
+	margin-top: -8px;
+	height: 200px;
+}
+.fullwidth p {
+	margin-top: 0 auto;
+}
+.content {
+	margin-top: 46px;
+	padding: 0px;
+}
+
+.header {
+	font-size: 18pt;
+	text-align: center;
+	padding: 42px;
+}
+.usagi {
+	width: 100%;
+	text-align: center;
+	padding: 16px;
+	position: relative;
+	left: -18px;
+}
+
+
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 16px;
+}
+.grid {
+	margin: 8px;
+	padding: 8px;
+	text-align: center;
+	border-radius: 16px;
+	border: 1px solid;
+}
+.r-grid-container {
+	display: grid;
+	grid-template-columns: 50%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 16px;
+}
+.r-grid {
+	margin: 8px;
+	padding: 8px;
+	text-align: center;
+	border-radius: 16px;
+	border: 1px solid;
+}
+.r-grid-container a {
+	text-shadow: none !important;
+}
+
+
+.button-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 16px;
+}
+.button {
+	width: 158px;
+	margin: 8px;
+	padding: 8px;
+	text-align: center;
+	border-radius: 16px;
+	border: 1px solid;
+}
+
+.timeline {
+	margin: 0 auto;
+	max-width: 92%;
+	margin-right: 32px;
+}
+.timeline a {
+	text-shadow: none;
+}
+.checkpoint {
+	max-width: 100%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	position: relative;
+}
+.checkpoint .post {
+	border: 1px solid;
+	border-radius: 1em;
+	padding: 16px;
+	margin-top: -32px;
+	margin-bottom: -16px;
+}
+.checkpoint p {
+	line-height: 27px;
+}
+.checkpoint:nth-child(n) {
+	border-left: 1px solid;
+	padding-left: 16px;
+}
+.checkpoint:nth-child(n)::before {
+	content: '';
+	width: 16px;;
+	height: 16px;
+	position: absolute;
+	top: 0%;
+	left: -9px;
+	border-radius: 16px;
+	border: 1px solid;
+}
+.checkpoint img {
+	width: 100%;
+	margin-bottom: 16px;
+}
+.post-wrapper {
+	border: 1px solid;
+	border-radius: 1em;
+	margin-top: -32px;
+	margin-bottom: -16px;
+}
+
+.userinfo {
+	padding-bottom: 32px;
+	padding-top: 16px;
+}
+.userinfo .avatar {
+	max-width: 50px;
+	height: auto;
+	border-radius: 25px;
+	margin-right: 12px;
+	float: left;
+}
+.userinfo .posttitle {
+	position: relative;
+	top: 16px;
+	font-size: 15pt;
+}
+.userinfo .postdate {
+	float: right;
+	position: relative;
+	top: 16px;
+	font-size: 10pt;
+}
+h1 {
+	font-size: 14pt;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 336px);
+  grid-gap: 10px;
+  margin-top: 16px;
+}
+
+.image-grid img  {
+  object-fit: cover;
+  width: 100% !important;
+  height: 336px !important;
+  clip-path: inset(0 0 0 0);
+  margin: auto;
+}
+/* Target the first image when there's only one */
+.image-grid a:first-child:only-child {
+	grid-column: 1 / span 2;
+}
+
+/* Target the third image if there are only 3 images */
+.image-grid a:nth-child(3):last-child {
+  grid-column: 1 / -1;
+}
+
+.admin-image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-gap: 10px;
+}
+.admin-img  {
+  object-fit: cover;
+  width: 100px !important;
+  height: 100px !important;
+  clip-path: inset(0 0 0 0);
+  margin: auto;
+}
+
+.response {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 16px;
+}
+
+.c {
+	padding: 16px;
+	padding-top: 32px;
+	text-align: center;
+}
+.c .avatar {
+	max-width: 150px;
+	height: auto;
+	border-radius: 128px;
+}
+.c .button {
+	width: 50%;
+	margin: 8px;
+	padding: 8px;
+	text-align: center;
+	border-radius: 16px;
+	border: 1px solid;
+	margin: 0 auto;
+	margin-bottom: 16px;
+}
+
+.admin-form {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 16px;
+}
+.form-cell {
+	margin: 8px;
+	padding: 8px;
+	text-align: left;
+	border-radius: 16px;
+}
+.form-cell input, .form-cell textarea {
+	width: 100%;
+	background: #000;
+	color: #aaa;
+	border: 1px solid #fff;
+	padding: 8px;
+	border-radius: 12px;
+}
+.form-cell textarea {
+	height: 128px;
+}
+
+.avatar img {
+	max-width: 100px;
+	height: auto;
+	border-radius: 50px;
+	margin-right: 12px;
+	float: left;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+input:checked + .slider {
+  background-color: #B26CD8;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #B26CD8;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.footer {
+	border-top: 1px solid #222;
+	background: #000;
+	text-align: center;
+	padding: 16px;
+	margin-top: 8px;
+}
+
+.green-audio-player .slider:before {
+	display: none !important;
+}
+
+.download {
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+#scroll-to-top {
+	cursor: pointer;
+	display: none;
+	position: fixed !important;
+	bottom: 20px;
+	right: 20px;
+	font-size: 24px;
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+	border-radius: 64px;
+	opacity: 0.5;
+	transition: opacity 0.5s;
+}
+#scroll-to-top:hover {
+	opacity: 1;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  height: 500px;
+  position: relative;
+  margin: auto;
+}
+.slideshow-container img {
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  clip-path: inset(0 0 0 0);
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.iru-tiny-player {
+	width: calc(100% - 52px) !important;
+	border-radius: 16px;
+	margin-bottom: 16px;
+}
+.song-seek {
+	border-radius: 16px;
+	opacity: 0.8;
+}

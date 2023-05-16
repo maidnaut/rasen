@@ -1,0 +1,117 @@
+body {
+	background: url("img/body.gif") repeat top left;
+	color: #FBCFDD;
+}
+a {
+	color: #FBCFDD;
+	text-decoration: none;
+	text-shadow: 3px 2px red;
+}
+a:hover {
+	color: #FF8FCF;
+	transition: 0.2s;
+}
+
+input[type=submit], input[type=button] {
+	background: #000;
+	color: #FBCFDD;
+	border: 1px solid #B26CD8;
+	cursor: pointer;
+}
+input[type=submit]:disabled, input[type=button]:disabled {
+	background: rgba(255,255,255,0.05);
+	cursor: default;
+}
+input[type=text], input[type=password] {
+	background: #000;
+	color: #FBCFDD;
+	border: 1px solid #B26CD8;
+}
+
+.nav {
+	background: url("img/nav.gif") repeat top left;
+}
+
+.right img {	
+	outline-color: color:#FBCFDD;
+}
+
+.content, .fullwidth {
+	background: rgba(0,0,0,0.2);
+	backdrop-filter: blur(10px) hue-rotate(0deg);
+	transition: backdrop-filter 10s linear;
+	animation: hue-rotate 10s infinite;
+}
+
+@keyframes hue-rotate {
+  0% {
+    backdrop-filter: blur(10px) hue-rotate(0deg);
+  }
+  100% {
+    backdrop-filter: blur(10px) hue-rotate(360deg);
+  }
+}
+
+.header {
+	background: url("img/header.gif") repeat top left;
+}
+.grid {
+	padding: 8px;
+	transition: 0.5s;
+}
+.grid:hover {
+	background: url("img/static.gif") repeat top left !important;
+}
+.grid-container a {
+	text-shadow: none !important;
+}
+
+.button {
+	background: url("img/header.gif") repeat top left;
+	border-color: #222;
+	transition: 0.2s;
+	text-shadow: none;
+}
+.button:hover {
+	border-color: #B26CD8;
+	transition: 0.2s;
+}
+.selected {
+	background: url("https://media.tenor.com/dxA2j-gsp4oAAAAC/glitch-static.gif") repeat top left !important;
+}
+.checkpoint .post, .checkpoint:nth-child(n), .checkpoint:nth-child(n)::before {
+	border-color: #222;
+	transition: 0.5s;
+}
+.checkpoint .post:hover, .checkpoint:nth-child(n):hover, .checkpoint:nth-child(n):hover::before {
+	border-color: #B26CD8;
+	transition: 0.5s;
+}
+.checkpoint:nth-child(n)::before {
+	background: url("img/header.gif") repeat top left;
+}
+.post-wrapper {
+	border-color: #222 !important;
+}
+hr {
+	border-color: #222;
+}
+.iru-tiny-player {
+	background: rgba(0,0,0,0.1);
+	color: #222 !important;
+}
+.song-seek {
+	border-radius: 16px;
+	opacity: 0.1;
+}
+.song-main-info {
+	color: #FBCFDD;
+}
+.iru-tiny-player .song-progress {
+	background: #FBCFDD !important;
+	mix-blend-mode: difference;
+	opacity: 0.1;
+	height: 32px !important; 
+	position: relative;
+	top: 12px;
+}
