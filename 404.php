@@ -15,7 +15,10 @@
 	} else {
 		$loggedin = false;
 	}
-	
+
+	$sitename = $db->query("SELECT sitename FROM users")->fetch_array()['sitename'];
+	$username = $db->query("SELECT username FROM users")->fetch_array()['username'];
+
 	$controller = new Controller();
 	$controller->output();
 ?>

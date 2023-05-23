@@ -30,6 +30,9 @@
 				break;
 			
 			case "settings":
+				error_reporting(E_ALL);
+				include_once($_SERVER['DOCUMENT_ROOT']."/lib/inc/db.php");
+				$my = $db->query("SELECT * FROM users")->fetch_array();
 				include("settings.tpl");
 				break;
 			

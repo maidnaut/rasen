@@ -60,7 +60,7 @@
 		<div class="post" style="position: relative; left: 24px;">
 			<p>
 				<div class="userinfo" style="width: calc(100% - 48px);">
-					<img src="<?=$userdata['avatar']?>" class="avatar">
+					<img src="/lib/avatar.png" class="avatar">
 					<span class="posttitle"><?=$postdata['title']?></span>
 					<span style="position: relative; top: 24px;" class="postdate" title="<?=date('H:i m/d/Y', $postdata['postdate'])?>"><?=fuzzy_time($postdata['postdate'])?></span>
 					

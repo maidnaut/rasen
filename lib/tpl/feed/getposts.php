@@ -71,7 +71,7 @@
 				<a href="/<?=$post['slug']?>/">
 					<p>
 						<div class="userinfo">
-							<img src="<?=$userdata['avatar']?>" class="avatar">
+							<img src="/lib/avatar.png" class="avatar">
 							<span class="posttitle"><?=$post['title']?></span>
 							<span class="postdate" title="<?=date('H:i m/d/Y', $post[3])?>"><?=fuzzy_time($post['postdate'])?></span>
 						</div>

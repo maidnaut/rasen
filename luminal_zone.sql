@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 06:07 AM
+-- Generation Time: May 23, 2023 at 11:59 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -37,32 +37,6 @@ CREATE TABLE `posts` (
   `hidden` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `title`, `slug`, `postdate`, `content`, `files`, `hidden`) VALUES
-(51, 'README', 'readme', '1684203352', 'The eye at the bottom of the page is the login, you can take out the link by editing /lib/tpl/globals/footer.tpl\r\n\r\nEverything is laid out in templates, so you can change those if you want to but you&#039;ll need to re-upload the files on change.\r\n\r\n[ + new post + ] in the admin panel scrolls out the form, and you can only upload 4 images at a time. If you want to do more, you can go to the upload tab in the admin panel to embed images to the post, but if you ONLY include images in a post that way, the post will show up in the blog instead of the images tab in the feed.\r\n\r\nPage editing directly edits template files, so technically I could make every template editable but that takes a lot of work to make a dynamic system for that, so I&#039;m just going to keep it to the Registry, License and Archive pages for now. Later when I work on lumizone again, I&#039;ll port those pages to the database so you can make new dynamic pages.\r\n\r\nHidden posts don&#039;t show up in the feed but you can link them directly.\r\n\r\nYou can use bbcode in posts, so far I just have b, i, u, center and img tags you do like (img)link(/img), you use square brackets for bbcode.\r\n\r\nuhhh idk if there&#039;s anything else i need to put here, it&#039;s a pretty simple blog system\r\n\r\nok byeeeeeee\r\n\r\n~jinni', '', '0');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `registry`
---
-
-CREATE TABLE `registry` (
-  `id` int(11) NOT NULL,
-  `title` text NOT NULL,
-  `link` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `registry`
---
-
-INSERT INTO `registry` (`id`, `title`, `link`) VALUES
-(1, 'itch.io', 'https://bilexth.itch.io/');
-
 -- --------------------------------------------------------
 
 --
@@ -71,19 +45,19 @@ INSERT INTO `registry` (`id`, `title`, `link`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `email` text NOT NULL,
+  `login` text NOT NULL,
   `username` text NOT NULL,
   `password` text NOT NULL,
-  `avatar` text NOT NULL,
-  `session` text NOT NULL
+  `session` text NOT NULL,
+  `sitename` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `username`, `password`, `avatar`, `session`) VALUES
-(1, 'xhct@protonmail.com', 'bilexth', '$2y$10$AQjDDW6.11Jh97j6GI.Y9u5wxJ1qj6mlY84gnvf598sLllzH/lQ7K', 'https://pbs.twimg.com/media/FtnNQKeXwAAnBVY?format=png&name=small', 'pdligro8dkdu37kp2rvdc0s3up');
+INSERT INTO `users` (`id`, `login`, `username`, `password`, `session`, `sitename`) VALUES
+(1, 'Admin', 'User', '$2y$10$jg12AEwUaofjxUmdfSiPo.STHhlPRWPP8I2/gc3ehmd2.42JUJIrm', '', '└ＬＵＭＩＮＡＬＺＯＮＥ┐');
 
 --
 -- Indexes for dumped tables
@@ -93,12 +67,6 @@ INSERT INTO `users` (`id`, `email`, `username`, `password`, `avatar`, `session`)
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `registry`
---
-ALTER TABLE `registry`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -115,13 +83,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
-
---
--- AUTO_INCREMENT for table `registry`
---
-ALTER TABLE `registry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `users`

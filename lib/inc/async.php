@@ -203,11 +203,16 @@
 		
 		// SETTINGS	
 		if ($_POST['mode'] == "settings") {
+			if ($_POST['login'] == '') { echo "You need a login name."; die(); }
+			if ($_POST['username'] == '') { echo "You need a username."; die(); }
+			if ($_POST['sitename'] == '') { echo "You need to name your site."; die(); }
+			if ($_POST['password1'] != $_POST['password2']) { echo "Password mismatch."; die(); }
+
 			$upload_dir = $_SERVER['DOCUMENT_ROOT']."/lib/";
 			$path_parts = pathinfo($_FILES['file']['name']);
 			$extension = $path_parts['extension'];
 			
-			if ($extension != "") {			
+			if ($extension != "") {
 				$file_name = "avatar.png";
 				$target_path = $upload_dir . $file_name;
 				if(!move_uploaded_file($_FILES['file']['tmp_name'], $target_path)){
@@ -216,7 +221,16 @@
 				}
 			}
 			
-			if (($_POST['password1'] != '') && ($_POST['password1'] == $_POST['password2'])) {
+			$login = validate($_POST['login']);
+			$username = validate($_POST['username']);
+			$sitename = validate($_POST['sitename']);
+			$sql = "UPDATE users SET login='$login', username='$username', sitename='$sitename'";
+			if (!$db->query($sql)) {
+				echo("Could not change password.");
+				die();
+			}
+			
+			if ($_POST['password1'] != '') {	
 				$password = password_hash($_POST['password1'], PASSWORD_DEFAULT);
 				$sql = "UPDATE users SET password='$password'";
 				if (!$db->query($sql)) {

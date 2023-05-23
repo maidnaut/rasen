@@ -1,6 +1,7 @@
 <?php
 
 	include("db.php");
+	error_reporting(E_ALL);
 	
 	function validate($data) {
 		$data = trim($data);
@@ -9,11 +10,11 @@
 		return $data;
 	}
 	
-	$email = validate($_POST['email']);
-	$password = validate ($_POST['password']);
+	$login = validate($_POST['login']);
+	$password = $_POST['password'];
 	
-	if (empty($email)) {
-		print("An email is required. <br><br>");
+	if (empty($login)) {
+		print("A username is required. <br><br>");
 		exit();
 	}
 	if (empty($password)) {
@@ -24,7 +25,7 @@
 	$query = "SELECT * FROM users";
 	$result = $db->query($query);
 	$row = $result->fetch_assoc();
-	if (($email != $row['email']) || (!password_verify($password, $row['password']))) {
+	if (($login != $row['login']) || (!password_verify($password, $row['password']))) {
 		print("Incorrect credentials. <br><br>");
 		exit();
 	}

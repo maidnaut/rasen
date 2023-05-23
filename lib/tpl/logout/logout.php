@@ -11,5 +11,5 @@
 		die();
 	}
 	
-	header("Location: /login/");
+	header("Location: /dimtreeline/");
 ?>

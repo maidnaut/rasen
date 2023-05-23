@@ -5,8 +5,8 @@
 		
 		<div class="footer">
 			<br><br><br><br>
-			<?php $route = ($loggedin == true) ? 'admin' : 'login'; ?>
-			<a href="/<?=$route?>/"><img src="/lib/css/img/favicon.png"></a> <br><br>
+			<img src="/lib/css/img/favicon.png">
+			<br><br>
 			<br>&copy; Bilexth 2023 // Powered by <a href="/rasen/">Rasen</a><br><br><br>
 			
 			• nothing exists below here but an infinite dream, spiraling deeper into unconsciousness •

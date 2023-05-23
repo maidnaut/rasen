@@ -24,8 +24,23 @@
 
 <div class="header">
 	ｌｕｍｉｎｅｓｃｅｎｃｅ ｉｎｔｅｒｆａｃｅ <br><br>
-	<div class="small">０００░▒▓ｌｏｇ ｏｆ ｂｉｌｅｘｔｈ； ｄｉｇｉｔａｌ ｓｈｒｉｎｅ ｍａｉｄｅｎ ▓▒░ ７７７</div>
+	<div class="small">０００░▒▓ｌｏｇ ｏｆ <span class="fullwidthtext"><?=$username?></span> ｄｉｇｉｔａｌ ｓｈｒｉｎｅ ｍａｉｄｅｎ ▓▒░ ７７７</div>
 </div>
+
+<script>
+	$(function() {
+		function convertToFull(e) {
+			e.each(function() {
+				var $this = $(this);
+				$this.text($this.text().replace(/[\u0021-\u007E]/g, function(fullwidthChar) {
+					return String.fromCharCode(fullwidthChar.charCodeAt(0) + 0xFEE0);
+				}));
+			});
+		}
+
+		convertToFull($('.fullwidthtext'));
+	});
+</script>
 
 <br>
 

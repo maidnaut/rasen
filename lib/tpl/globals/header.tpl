@@ -13,7 +13,7 @@
 		<div class="nav">
 			<div class="container">
 				<div class="left">
-					<a href="/home/">└ＬＵＭＩＮＡＬＺＯＮＥ┐</a>
+					<a href="/home/"><?=$sitename?></a>
 				</div>
 				<div class="right">
 					<a href="/registry/">Registry</a>
